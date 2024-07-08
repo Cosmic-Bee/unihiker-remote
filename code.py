@@ -16,11 +16,6 @@ lcd_print = ''
 # Connect WIFI
 ssid, pw = ('BPI-PicoW-S3', '12345678')
 
-ipv4 = ipaddress.IPv4Address("192.168.31.2")
-netmask = ipaddress.IPv4Address("255.255.255.0")
-gateway = ipaddress.IPv4Address("192.168.31.1")
-wifi.radio.set_ipv4_address(ipv4=ipv4, netmask=netmask, gateway=gateway)
-
 wifi.radio.start_ap(ssid=ssid, password=pw)
 time.sleep(1)
 print(f'WiFi AP mode Started! SSID is {ssid}, IP={wifi.radio.ipv4_address_ap}')
